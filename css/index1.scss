@@ -1,0 +1,17 @@
+@import "compass/css3";
+
+$bg: #343;
+$second: #4e4d4d;
+
+@mixin getComs{
+	@include border-radius(10px);
+}
+
+.top{
+	background:$bg;
+	@include getComs;
+}
+.sec{
+	color:$second;
+	@include getComs;
+}

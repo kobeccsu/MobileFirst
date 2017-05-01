@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Flex 布局</title>
+	<meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="yes" name="apple-touch-fullscreen">
+	<meta content="telephone=no,email=no" name="format-detection">
+	<meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes">
+	<style type="text/css">
+		html{
+			font-size: 32px;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+		body{
+			position: relative;
+		}
+		.tab{
+			width: 100%;
+			display: flex;
+		}
+		.tab > div{
+			flex: 1 0 25%;
+			/*font-size: .8rem;*/
+		}
+
+		.parent{
+			display: flex;
+			height: 9.375rem;
+		}
+		.child{
+			width: 3.125rem;
+			height: 3.125rem;
+			margin: auto;
+		}
+		.main-view-wrap{
+			display: block;
+			width: 640px;
+			height: 1136px;
+			overflow: hidden;
+		}
+		.scroll-view{
+			width: 100%;
+		    height: 100%;
+		    overflow: hidden;
+		    display: -webkit-box;
+		    display: -moz-box;
+		    display: -ms-flexbox;
+		    display: -webkit-flex;
+		    display: flex;
+		    flex-direction: column;
+		}
+
+		.scroll-view .scroll-wrap{
+		    -webkit-box-flex: 1;
+		    -moz-box-flex: 1;
+		    -webkit-flex: 1;
+		    -ms-flex: 1;
+		    flex: 1;
+		    overflow: hidden;
+		    position: relative;
+		}
+		.scroll-view .scroll-content{
+			position: absolute;
+		}
+		.scroll-view .footer-fixed{
+			display: block;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 115px;
+			padding-bottom:200px;
+		}
+		.scroll-view .top-fix{
+			height: 115px;
+			display: block;
+			top: 0;
+			left: 0;
+		}
+	</style>
+	<script type="text/javascript" src="js/lib/zepto.js"></script>
+	<script type="text/javascript" src="js/lib/touch.js"></script>
+	<script type="text/javascript" src="js/lib/ghostclick.js"></script>
+	<script type="text/javascript" src="js/lib/iscroll.js"></script>
+	<!-- <script type="text/javascript" src="js/lib/vue.js"></script> -->
+	
+		<script type="text/javascript">
+	// $(document).ready(function() {
+	// 	var counter = 0;
+	// 	$("#menu1").off("tap").on("tap", function(e){
+	// 		// e.cancelBubble =true;
+	// 		e.stopPropagation();
+	// 		alert('haha no big deal, consist on that,counter :' + counter);
+	// 		counter++;
+	// 		return false;
+	// 	});
+	// 	var myScroll = new IScroll('.scroll-wrap');
+	// })
+		
+	</script>
+</head>
+<body>
+	<div class="main-view-wrap">
+		<div class="scroll-view">
+			<div class="top-fix">
+				<header>
+					<div class="header-wrap" id="head1">头部:{{message}}</div>
+					<div id="app1"></div>
+				</header>
+			</div>
+			<div class="scroll-wrap">
+				<div class="scroll-content">
+					<div id="vueCom1">
+						<router-view></router-view>
+					</div>
+				</div>
+			</div>
+			<div class="footer-fixed">
+				<div class="tab">
+					<div id="menu1">菜单1</div>
+					<div>菜单2</div>
+					<div>菜单3</div>
+					<div>菜单4</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		// import tem from './tpl/useIt.vue'
+		// export default{
+		// 	components:{
+		// 		tem:tem
+		// 	}
+		// }
+
+	</script>
+	<script type="text/javascript" src="bundle.js"></script>
+</body>
+</html>
