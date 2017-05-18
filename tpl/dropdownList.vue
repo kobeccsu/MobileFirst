@@ -32,6 +32,7 @@
 <style scoped>
 	.dropdown-main{
 		background: #e4e4e4;
+		cursor: pointer;
 	}
 	.popdown{
 		position: absolute;

@@ -1,14 +1,21 @@
 <template>
-	<p>{{ greeting }} world</p>
+	<div>
+		<p>{{ greeting }} world</p>
+		<dropdownlist></dropdownlist>
+	</div>
 </template>
 
 <script>
+	import dropdownlist from './dropdownlist.vue';
+
 	export default {
-		// el: "#app1", 
 		data(){
 			return {
 				greeting : 'hello'
 			}
+		},
+		components:{
+			dropdownlist : dropdownlist
 		}
 	}
 </script>
